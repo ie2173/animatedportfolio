@@ -27,7 +27,6 @@ const Contact = () => {
       )
       .then(
         () => {
-          console.log(refForm.current)
           alert('Message successfully sent!')
           window.location.reload(false)
         },
@@ -57,33 +56,33 @@ const Contact = () => {
             <form ref={refForm} onSubmit={sendEmail}>
               <ul>
                 <li className="half">
-                  <input placeholder="Name" type="text" name="name" required />
+                  <input type="text" name="name" placeholder="Name" required />
                 </li>
                 <li className="half">
                   <input
-                    placeholder="Email"
                     type="email"
                     name="email"
+                    placeholder="email"
                     required
                   />
                 </li>
                 <li>
                   <input
-                    placeholder="Subject"
                     type="text"
+                    placeholder="subject"
                     name="subject"
                     required
                   />
                 </li>
                 <li>
                   <textarea
-                    placeholder="Message"
+                    placeholder="message"
                     name="message"
                     required
                   ></textarea>
                 </li>
                 <li>
-                  <input type="submit" className="flat-button" value="SEND" />
+                  <input type="submit" className="flat-button" value="send" />
                 </li>
               </ul>
             </form>
