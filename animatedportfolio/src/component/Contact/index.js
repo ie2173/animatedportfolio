@@ -15,13 +15,19 @@ const Contact = () => {
     }, 3000)
   }, [])
 
-  const handleEmail = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault()
 
     emailjs
-      .sendForm('gmail', 'template_YeJhZkgb', ref.current.form, 'your-token')
+      .sendForm(
+        'service_39cur5n',
+        'template_4l9uuxn',
+        refForm.current,
+        '71RLGo3-0Q1rR1qil'
+      )
       .then(
         () => {
+          console.log(refForm.current)
           alert('Message successfully sent!')
           window.location.reload(false)
         },
@@ -48,36 +54,36 @@ const Contact = () => {
             to contact me using the form below.
           </p>
           <div className="contact-form">
-            <form ref={refForm} onSubmit={handleEmail}>
+            <form ref={refForm} onSubmit={sendEmail}>
               <ul>
                 <li className="half">
-                  <input type="text" name="name" placeholder="Name" required />
+                  <input placeholder="Name" type="text" name="name" required />
                 </li>
                 <li className="half">
                   <input
+                    placeholder="Email"
                     type="email"
                     name="email"
-                    placeholder="email"
                     required
                   />
                 </li>
                 <li>
                   <input
+                    placeholder="Subject"
                     type="text"
-                    placeholder="subject"
                     name="subject"
                     required
                   />
                 </li>
                 <li>
                   <textarea
-                    placeholder="message"
+                    placeholder="Message"
                     name="message"
                     required
                   ></textarea>
                 </li>
                 <li>
-                  <input type="submit" classname="flat-button" value="send" />
+                  <input type="submit" className="flat-button" value="SEND" />
                 </li>
               </ul>
             </form>
